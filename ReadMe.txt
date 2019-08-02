@@ -11,7 +11,7 @@ GetWindowsVertion
 ■ セットの仕方
 PowerShell プロンプトで install.ps1 を実行してください
 
-次に PowerShell プロンプト開くと apo コマンドが使えるようになっています。
+次に PowerShell プロンプト開くと GetWindowsVertion コマンドが使えるようになっています。
 
 ■ Uninstall 方法
 uninstall.ps1 を実行して下さい
