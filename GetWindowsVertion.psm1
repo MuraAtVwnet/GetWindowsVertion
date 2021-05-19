@@ -21,6 +21,11 @@ function GetWindowsVertion(){
     $RegKey = "ReleaseId"
     echo (Get-ItemProperty $RegPath -name $RegKey -ErrorAction SilentlyContinue).$RegKey
 
+    # Winver の表示バージョン
+    $RegPath = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion"
+    $RegKey = "DisplayVersion"
+    echo (Get-ItemProperty $RegPath -name $RegKey -ErrorAction SilentlyContinue).$RegKey
+
     # Hot Fix
     Get-HotFix | sort InstalledOn -Descending
 
