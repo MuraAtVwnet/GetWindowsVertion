@@ -30,9 +30,8 @@ function GetWindowsVertion(){
     Get-HotFix | sort InstalledOn -Descending
 
     # 起動時刻
-    $WMI_OpreationSystem = Get-WmiObject win32_operatingsystem
-    $Boot = $WMI_OpreationSystem.LastBootUpTime
-    $WMI_OpreationSystem.ConvertToDateTime($Boot)
+    $WMI_OpreationSystem = Get-CimInstance win32_operatingsystem
+    $WMI_OpreationSystem.LastBootUpTime
 }
 
 
