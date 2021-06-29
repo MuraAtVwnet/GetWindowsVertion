@@ -26,6 +26,14 @@ function GetWindowsVertion(){
     $RegKey = "DisplayVersion"
     echo (Get-ItemProperty $RegPath -name $RegKey -ErrorAction SilentlyContinue).$RegKey
 
+    # OS のエディション
+    $Win32_OperatingSystem = Get-CimInstance Win32_OperatingSystem
+    $OS = $Win32_OperatingSystem.Caption
+    $SP = $Win32_OperatingSystem.ServicePackMajorVersion
+    if( $SP -ne 0 ){ $OS += " SP" + $SP }
+    echo ""
+    echo $OS
+
     # Hot Fix
     Get-HotFix | sort InstalledOn -Descending
 
